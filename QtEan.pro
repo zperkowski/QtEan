@@ -28,7 +28,17 @@ SOURCES += \
         mainwindow.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+        interval.h
 
 FORMS += \
         mainwindow.ui
+unix {
+    INCLUDEPATH += /usr/local/Cellar/boost/1.66.0/include/
+    INCLUDEPATH += /usr/local/Cellar/mpfr/4.0.1/include/
+    INCLUDEPATH += /usr/local/Cellar/gmp/6.1.2_2/include/
+
+    LIBS +=  -L/usr/local/Cellar/boost/1.66.0/lib/ -lboost_thread-mt -lboost_system-mt
+    LIBS += -L/usr/local/Cellar/mpfr/4.0.1/lib/ -lmpfr
+    LIBS += -L/usr/local/Cellar/gmp/6.1.2_2/lib/ -lgmp
+}
