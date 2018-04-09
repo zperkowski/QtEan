@@ -26,12 +26,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    canvas.cpp
+    canvas.cpp \
+    equation.cpp
 
 HEADERS += \
         mainwindow.h \
         interval.h \
-    canvas.h
+    canvas.h \
+    equation.h
 
 FORMS += \
         mainwindow.ui \
