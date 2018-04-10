@@ -13,9 +13,9 @@ void MainWindow::buttonResultClicked() {
     std::vector<Equation> equationsVector;
 
     //First equation
-    double x = ui->lineEdit_x1->text().toDouble();
-    double y = ui->lineEdit_y1->text().toDouble();
-    double c = ui->lineEdit_c1->text().toDouble();
+    long double x = ui->lineEdit_x1->text().toDouble();
+    long double y = ui->lineEdit_y1->text().toDouble();
+    long double c = ui->lineEdit_c1->text().toDouble();
 
     Equation *eq = new Equation(x, y, c);
 

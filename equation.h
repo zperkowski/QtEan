@@ -9,10 +9,10 @@ private:
     double y;
     double c;
 public:
-    Equation(double x, double y, double c);
-    double getX();
-    double getY();
-    double getC();
+    Equation(long double x, long double y, long double c);
+    long double getX();
+    long double getY();
+    long double getC();
 };
 
 #endif // EQUATION_H

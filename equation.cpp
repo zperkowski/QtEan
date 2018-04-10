@@ -1,19 +1,19 @@
 #include "equation.h"
 
-Equation::Equation(double x, double y, double c) {
+Equation::Equation(long double x, long double y, long double c) {
     this->x = x;
     this->y = y;
     this->c = c;
 }
 
-double Equation::getX() {
+long double Equation::getX() {
     return x;
 }
 
-double Equation::getY() {
+long double Equation::getY() {
     return y;
 }
 
-double Equation::getC() {
+long double Equation::getC() {
     return c;
 }
