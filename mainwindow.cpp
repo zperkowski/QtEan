@@ -9,30 +9,39 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 }
 
-void MainWindow::buttonResultClicked() {
+void MainWindow::buttonRandomResultClicked() {
     std::vector<Equation> equationsVector;
 
     //First equation
-    long double x = ui->lineEdit_x1->text().toDouble();
-    long double y = ui->lineEdit_y1->text().toDouble();
-    long double c = ui->lineEdit_c1->text().toDouble();
+    long double x = ui->lineEdit_matrix_x->text().toDouble();
+    long double y = ui->lineEdit_matrix_y->text().toDouble();
+    long double b = ui->lineEdit_b->text().toDouble();
 
-    Equation *eq = new Equation(x, y, c);
+    Equation *eq = new Equation(x, y, b);
 
     equationsVector.push_back(*eq);
 
     //Second equation
-    x = ui->lineEdit_x2->text().toDouble();
-    y = ui->lineEdit_y2->text().toDouble();
-    c = ui->lineEdit_c2->text().toDouble();
+    x = ui->lineEdit_matrix_x->text().toDouble();
+    y = ui->lineEdit_matrix_y->text().toDouble();
+    b = ui->lineEdit_b->text().toDouble();
 
-    eq = new Equation(x, y, c);
+    eq = new Equation(x, y, b);
 
     equationsVector.push_back(*eq);
 
     Canvas *canvas = new Canvas(this, equationsVector);
     canvas->show();
 }
+
+void MainWindow::buttonRandomBigResultClicked() {
+
+}
+
+void MainWindow::buttonRandomHilbertResultClicked() {
+
+}
+
 
 MainWindow::~MainWindow() {
     delete ui;

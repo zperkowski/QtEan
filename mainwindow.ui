@@ -14,111 +14,360 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="gridLayoutWidget">
+   <widget class="QTabWidget" name="tabHilbert">
     <property name="geometry">
      <rect>
-      <x>-1</x>
-      <y>-1</y>
+      <x>0</x>
+      <y>0</y>
       <width>401</width>
       <height>241</height>
      </rect>
     </property>
-    <layout class="QGridLayout" name="gridLayout">
-     <property name="sizeConstraint">
-      <enum>QLayout::SetMaximumSize</enum>
-     </property>
-     <item row="1" column="4">
-      <widget class="QLineEdit" name="lineEdit_c1"/>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLineEdit" name="lineEdit_x1"/>
-     </item>
-     <item row="2" column="2">
-      <widget class="QLineEdit" name="lineEdit_y2"/>
-     </item>
-     <item row="1" column="3">
-      <widget class="QLabel" name="label_e1">
-       <property name="text">
-        <string>=</string>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tabRandom">
+     <attribute name="title">
+      <string>Random</string>
+     </attribute>
+     <widget class="QWidget" name="gridLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>401</width>
+        <height>241</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetMaximumSize</enum>
        </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
+       <item row="9" column="1">
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="8" column="1">
+        <widget class="QPushButton" name="random_button_result">
+         <property name="text">
+          <string>Result</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLineEdit" name="lineEdit_matrix_x"/>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLineEdit" name="lineEdit_matrix_y"/>
+       </item>
+       <item row="5" column="2">
+        <widget class="QLineEdit" name="lineEdit_b">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QLabel" name="label_text_b">
+         <property name="text">
+          <string>b</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLabel" name="label_times">
+         <property name="text">
+          <string>*</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="label_size">
+         <property name="text">
+          <string>x</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_text_size">
+         <property name="text">
+          <string>Matrix A size</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="label_text_formula">
+         <property name="text">
+          <string>A * b = x</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tabRandomBig">
+     <attribute name="title">
+      <string>Random (big exponents)</string>
+     </attribute>
+     <widget class="QWidget" name="gridLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>401</width>
+        <height>241</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetMaximumSize</enum>
        </property>
-      </widget>
-     </item>
-     <item row="2" column="3">
-      <widget class="QLabel" name="label_e2">
-       <property name="text">
-        <string>=</string>
+       <item row="7" column="0">
+        <widget class="QLineEdit" name="lineEdit_matrix_y_big"/>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLabel" name="label_times_big">
+         <property name="text">
+          <string>*</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="label_desc_big">
+         <property name="text">
+          <string>Big exponents</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="label_text_formula_big">
+         <property name="text">
+          <string>A * b = x</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="label_size_big">
+         <property name="text">
+          <string>x</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_text_size_big">
+         <property name="text">
+          <string>Matrix A size</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QPushButton" name="random_button_result_big">
+         <property name="text">
+          <string>Result</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="2">
+        <widget class="QLineEdit" name="lineEdit_b_big">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QLabel" name="label_text_b_big">
+         <property name="text">
+          <string>b</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLineEdit" name="lineEdit_matrix_x_big"/>
+       </item>
+       <item row="9" column="1">
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Hilbert</string>
+     </attribute>
+     <widget class="QWidget" name="gridLayoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>401</width>
+        <height>241</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetMaximumSize</enum>
        </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="4">
-      <widget class="QLineEdit" name="lineEdit_c2"/>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLabel" name="label_p1">
-       <property name="text">
-        <string>+</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QLabel" name="label_p2">
-       <property name="text">
-        <string>+</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="2">
-      <widget class="QLineEdit" name="lineEdit_y1"/>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLineEdit" name="lineEdit_x2"/>
-     </item>
-     <item row="0" column="2">
-      <spacer name="verticalSpacer">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item row="3" column="2">
-      <widget class="QPushButton" name="button_result">
-       <property name="text">
-        <string>Result</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="2">
-      <spacer name="verticalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
+       <item row="7" column="0">
+        <widget class="QLineEdit" name="lineEdit_matrix_y_hilbert"/>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLabel" name="label_times_hilbert">
+         <property name="text">
+          <string>*</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="label_desc_hilbert">
+         <property name="text">
+          <string>Hilbert matrix</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="label_text_formula_hilbert">
+         <property name="text">
+          <string>A * b = x</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="label_size_hilbert">
+         <property name="text">
+          <string>x</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_text_size_hilbert">
+         <property name="text">
+          <string>Matrix A size</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QPushButton" name="random_button_result_hilbert">
+         <property name="text">
+          <string>Result</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="2">
+        <widget class="QLineEdit" name="lineEdit_b_hilbert">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QLabel" name="label_text_b_hilbert">
+         <property name="text">
+          <string>b</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLineEdit" name="lineEdit_matrix_x_hilbert"/>
+       </item>
+       <item row="9" column="1">
+        <spacer name="verticalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -145,23 +394,57 @@
  <resources/>
  <connections>
   <connection>
-   <sender>button_result</sender>
+   <sender>random_button_result</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>buttonResultClicked()</slot>
+   <slot>buttonRandomResultClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>169</x>
-     <y>184</y>
+     <x>229</x>
+     <y>266</y>
     </hint>
     <hint type="destinationlabel">
-     <x>125</x>
-     <y>217</y>
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>random_button_result_big</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>buttonRandomBigResultClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>203</x>
+     <y>248</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>random_button_result_hilbert</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>buttonRandomHilbertResultClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>203</x>
+     <y>248</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
-  <slot>buttonResultClicked()</slot>
+  <slot>buttonRandomResultClicked()</slot>
+  <slot>buttonRandomBigResultClicked()</slot>
+  <slot>buttonRandomHilbertResultClicked()</slot>
  </slots>
 </ui>

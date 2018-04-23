@@ -15,7 +15,9 @@ public:
     ~MainWindow();
 
 public slots:
-    void buttonResultClicked();
+    void buttonRandomResultClicked();
+    void buttonRandomBigResultClicked();
+    void buttonRandomHilbertResultClicked();
 
 private:
     Ui::MainWindow *ui;
