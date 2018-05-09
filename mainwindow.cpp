@@ -1,7 +1,9 @@
+#include <iostream>
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "canvas.h"
 #include "equation.h"
+#include "matrix.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -10,6 +12,17 @@ MainWindow::MainWindow(QWidget *parent) :
 }
 
 void MainWindow::buttonRandomResultClicked() {
+    //Matrix
+    Matrix *matrixRandom = new Matrix(
+                ui->lineEdit_matrix_x->text().toInt(),
+                ui->lineEdit_matrix_y->text().toInt()
+                );
+
+    std::cout << matrixRandom->getHeight()
+              << std::endl
+              << matrixRandom->getWidth()
+              << std::endl;
+
     std::vector<Equation> equationsVector;
 
     //First equation

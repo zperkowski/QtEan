@@ -27,13 +27,15 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     canvas.cpp \
-    equation.cpp
+    equation.cpp \
+    matrix.cpp
 
 HEADERS += \
         mainwindow.h \
         interval.h \
     canvas.h \
-    equation.h
+    equation.h \
+    matrix.h
 
 FORMS += \
         mainwindow.ui \
