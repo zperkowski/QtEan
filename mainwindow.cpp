@@ -48,6 +48,16 @@ void MainWindow::buttonRandomResultClicked() {
 }
 
 void MainWindow::buttonRandomBigResultClicked() {
+    Matrix matrixBig(
+                ui->lineEdit_matrix_x_big->text().toInt(),
+                ui->lineEdit_matrix_y_big->text().toInt());
+    matrixBig.generateRandom(2, 5);
+
+    std::cout << matrixBig.getCell(0, 0) << std::endl;
+//    std::cout << matrixBig.getCell(
+//                      ui->lineEdit_matrix_x_big->text().toInt() - 1,
+//                      ui->lineEdit_matrix_y_big->text().toInt() - 1)
+//               << std::endl;
 
 }
 
