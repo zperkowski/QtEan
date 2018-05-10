@@ -30,7 +30,7 @@
      </sizepolicy>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tabRandom">
      <attribute name="title">
@@ -165,8 +165,15 @@
        <property name="sizeConstraint">
         <enum>QLayout::SetMaximumSize</enum>
        </property>
-       <item row="7" column="0">
-        <widget class="QLineEdit" name="lineEdit_matrix_y_big"/>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_text_size_big">
+         <property name="text">
+          <string>Matrix A size</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
        </item>
        <item row="5" column="1">
         <widget class="QLabel" name="label_times_big">
@@ -177,6 +184,29 @@
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
+       </item>
+       <item row="9" column="1">
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="5" column="2">
+        <widget class="QLineEdit" name="lineEdit_x_big">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLineEdit" name="lineEdit_matrix_x_big"/>
        </item>
        <item row="1" column="1">
         <widget class="QLabel" name="label_desc_big">
@@ -205,30 +235,6 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_text_size_big">
-         <property name="text">
-          <string>Matrix A size</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="1">
-        <widget class="QPushButton" name="random_button_result_big">
-         <property name="text">
-          <string>Result</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="2">
-        <widget class="QLineEdit" name="lineEdit_x_big">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
        <item row="2" column="2">
         <widget class="QLabel" name="label_text_x_big">
          <property name="text">
@@ -239,21 +245,41 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="0">
-        <widget class="QLineEdit" name="lineEdit_matrix_x_big"/>
+       <item row="7" column="0">
+        <widget class="QLineEdit" name="lineEdit_matrix_y_big"/>
        </item>
-       <item row="9" column="1">
-        <spacer name="verticalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
+       <item row="8" column="1">
+        <widget class="QPushButton" name="random_button_result_big">
+         <property name="text">
+          <string>Result</string>
          </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_text_min_exp_big">
+         <property name="text">
+          <string>Minimal exponent</string>
          </property>
-        </spacer>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLabel" name="label_text_max_exp_big">
+         <property name="text">
+          <string>Maximal exponent</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLineEdit" name="lineEdit_min_exp_big"/>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLineEdit" name="lineEdit_max_exp_big"/>
        </item>
       </layout>
      </widget>

@@ -51,7 +51,9 @@ void MainWindow::buttonRandomBigResultClicked() {
     Matrix matrixBig(
                 ui->lineEdit_matrix_x_big->text().toInt(),
                 ui->lineEdit_matrix_y_big->text().toInt());
-    matrixBig.generateRandom(2, 5);
+    matrixBig.generateRandom(
+                ui->lineEdit_min_exp_big->text().toDouble(),
+                ui->lineEdit_max_exp_big->text().toDouble());
 
     std::cout << matrixBig.getCell(0, 0) << std::endl;
 //    std::cout << matrixBig.getCell(
