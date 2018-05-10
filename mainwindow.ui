@@ -76,16 +76,16 @@
         <widget class="QLineEdit" name="lineEdit_matrix_y"/>
        </item>
        <item row="5" column="2">
-        <widget class="QLineEdit" name="lineEdit_b">
+        <widget class="QLineEdit" name="lineEdit_x">
          <property name="text">
           <string/>
          </property>
         </widget>
        </item>
        <item row="2" column="2">
-        <widget class="QLabel" name="label_text_b">
+        <widget class="QLabel" name="label_text_x">
          <property name="text">
-          <string>b</string>
+          <string>x</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -138,7 +138,7 @@
        <item row="1" column="1">
         <widget class="QLabel" name="label_text_formula">
          <property name="text">
-          <string>A * b = x</string>
+          <string>A * x = B</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -188,7 +188,7 @@
        <item row="0" column="1">
         <widget class="QLabel" name="label_text_formula_big">
          <property name="text">
-          <string>A * b = x</string>
+          <string>A * x = B</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -223,16 +223,16 @@
         </widget>
        </item>
        <item row="5" column="2">
-        <widget class="QLineEdit" name="lineEdit_b_big">
+        <widget class="QLineEdit" name="lineEdit_x_big">
          <property name="text">
           <string/>
          </property>
         </widget>
        </item>
        <item row="2" column="2">
-        <widget class="QLabel" name="label_text_b_big">
+        <widget class="QLabel" name="label_text_x_big">
          <property name="text">
-          <string>b</string>
+          <string>x</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -298,7 +298,7 @@
        <item row="0" column="1">
         <widget class="QLabel" name="label_text_formula_hilbert">
          <property name="text">
-          <string>A * b = x</string>
+          <string>A * x = B</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -333,16 +333,16 @@
         </widget>
        </item>
        <item row="5" column="2">
-        <widget class="QLineEdit" name="lineEdit_b_hilbert">
+        <widget class="QLineEdit" name="lineEdit_x_hilbert">
          <property name="text">
           <string/>
          </property>
         </widget>
        </item>
        <item row="2" column="2">
-        <widget class="QLabel" name="label_text_b_hilbert">
+        <widget class="QLabel" name="label_text_x_hilbert">
          <property name="text">
-          <string>b</string>
+          <string>x</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>

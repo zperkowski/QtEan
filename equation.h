@@ -1,18 +1,19 @@
 #ifndef EQUATION_H
 #define EQUATION_H
+#include "matrix.h"
 
 
 class Equation
 {
 private:
+    Matrix A;
     long double x;
-    long double y;
-    long double c;
+    Matrix B;
 public:
-    Equation(long double x, long double y, long double c);
+    Equation(Matrix A, long double x);
+    Matrix getA();
     long double getX();
-    long double getY();
-    long double getC();
+    Matrix getB();
 };
 
 #endif // EQUATION_H

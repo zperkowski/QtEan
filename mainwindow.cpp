@@ -28,23 +28,23 @@ void MainWindow::buttonRandomResultClicked() {
     //First equation
     long double x = ui->lineEdit_matrix_x->text().toDouble();
     long double y = ui->lineEdit_matrix_y->text().toDouble();
-    long double b = ui->lineEdit_b->text().toDouble();
+    long double b = ui->lineEdit_x->text().toDouble();
 
-    Equation *eq = new Equation(x, y, b);
+//    Equation *eq = new Equation(x, y, b);
 
-    equationsVector.push_back(*eq);
+//    equationsVector.push_back(*eq);
 
     //Second equation
     x = ui->lineEdit_matrix_x->text().toDouble();
     y = ui->lineEdit_matrix_y->text().toDouble();
-    b = ui->lineEdit_b->text().toDouble();
+    b = ui->lineEdit_x->text().toDouble();
 
-    eq = new Equation(x, y, b);
+//    eq = new Equation(x, y, b);
 
-    equationsVector.push_back(*eq);
+//    equationsVector.push_back(*eq);
 
-    Canvas *canvas = new Canvas(this, equationsVector);
-    canvas->show();
+//    Canvas *canvas = new Canvas(this, equationsVector);
+//    canvas->show();
 }
 
 void MainWindow::buttonRandomBigResultClicked() {

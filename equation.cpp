@@ -1,19 +1,20 @@
 #include "equation.h"
+#include "matrix.h"
 
-Equation::Equation(long double x, long double y, long double c) {
+Equation::Equation(Matrix A, long double x) {
+    this->A = A;
     this->x = x;
-    this->y = y;
-    this->c = c;
+    this->B.generateZeros();
+}
+
+Matrix Equation::getA() {
+    return A;
 }
 
 long double Equation::getX() {
     return x;
 }
 
-long double Equation::getY() {
-    return y;
-}
-
-long double Equation::getC() {
-    return c;
+Matrix Equation::getB() {
+    return B;
 }
