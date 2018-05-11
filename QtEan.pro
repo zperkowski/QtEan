@@ -26,20 +26,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    canvas.cpp \
     equation.cpp \
-    matrix.cpp
+    matrix.cpp \
+    table.cpp
 
 HEADERS += \
         mainwindow.h \
         interval.h \
-    canvas.h \
     equation.h \
-    matrix.h
+    matrix.h \
+    table.h
 
 FORMS += \
         mainwindow.ui \
-    canvas.ui
+    canvas.ui \
+    table.ui
 unix {
     INCLUDEPATH += /usr/local/Cellar/boost/1.66.0/include/
     INCLUDEPATH += /usr/local/Cellar/mpfr/4.0.1/include/

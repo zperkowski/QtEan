@@ -17,7 +17,7 @@ Matrix::Matrix(unsigned long h, unsigned long w)
 }
 
 long double Matrix::getCell(long x, long y) {
-    return mVector[x][y];
+    return mVector[y][x];
 }
 
 unsigned long Matrix::getWidth() {
