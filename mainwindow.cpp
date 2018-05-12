@@ -19,33 +19,34 @@ void MainWindow::buttonRandomResultClicked() {
                 );
     matrixRandom.generateRandom();
 
-    std::cout << matrixRandom.getHeight()
-              << std::endl
+    long double x = ui->lineEdit_x->text().toDouble();
+
+    Matrix matrixB(matrixRandom.getHeight(), matrixRandom.getWidth());
+    matrixB.generateZeros();
+
+    std::cout << "matrixRandom.getHeight(): "
+              << matrixRandom.getHeight()
+              << " matrixRandom.getWidth(): "
               << matrixRandom.getWidth()
+              << " x: "
+              << x
+              << " matrixB.getHeight(): "
+              << matrixB.getHeight()
+              << " matrixB.getWidth(): "
+              << matrixB.getWidth()
               << std::endl;
 
     std::vector<Equation> equationsVector;
 
-    //First equation
-    long double x = ui->lineEdit_matrix_x->text().toDouble();
-    long double y = ui->lineEdit_matrix_y->text().toDouble();
-    long double b = ui->lineEdit_x->text().toDouble();
+    Equation eq(matrixRandom, x);
 
-//    Equation *eq = new Equation(x, y, b);
+    Table *tableA = new Table(this, eq.getA());
+    tableA->setWindowTitle("Matrix A");
+    tableA->show();
 
-//    equationsVector.push_back(*eq);
-
-    //Second equation
-    x = ui->lineEdit_matrix_x->text().toDouble();
-    y = ui->lineEdit_matrix_y->text().toDouble();
-    b = ui->lineEdit_x->text().toDouble();
-
-//    eq = new Equation(x, y, b);
-
-//    equationsVector.push_back(*eq);
-
-    Table *table = new Table(this, matrixRandom);
-    table->show();
+    Table *tableB = new Table(this, eq.getB());
+    tableB->setWindowTitle("Matrix B");
+    tableB->show();
 }
 
 void MainWindow::buttonRandomBigResultClicked() {

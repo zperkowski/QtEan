@@ -4,6 +4,7 @@
 Equation::Equation(Matrix A, long double x) {
     this->A = A;
     this->x = x;
+    this->B = Matrix(A.getHeight(), A.getWidth());
     this->B.generateZeros();
 }
 
