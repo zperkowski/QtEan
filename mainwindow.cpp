@@ -60,12 +60,20 @@ void MainWindow::buttonRandomBigResultClicked() {
                 ui->lineEdit_min_exp_big->text().toDouble(),
                 ui->lineEdit_max_exp_big->text().toDouble());
 
-    std::cout << matrixBig.getCell(0, 0) << std::endl;
-//    std::cout << matrixBig.getCell(
-//                      ui->lineEdit_matrix_x_big->text().toInt() - 1,
-//                      ui->lineEdit_matrix_y_big->text().toInt() - 1)
-//               << std::endl;
+    // TODO: Seperate all numbers in the text
+    long double x_tmp = ui->lineEdit_x_big->text().toDouble();
+    std::vector<long double> x;
+    x.push_back(x_tmp);
 
+    Equation eq(matrixBig, x);
+
+    Table *tableA = new Table(this, eq.getA());
+    tableA->setWindowTitle("Matrix A");
+    tableA->show();
+
+    Table *tableB = new Table(this, eq.getB());
+    tableB->setWindowTitle("Matrix B");
+    tableB->show();
 }
 
 void MainWindow::buttonRandomHilbertResultClicked() {
