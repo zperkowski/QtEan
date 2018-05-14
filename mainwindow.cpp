@@ -19,7 +19,10 @@ void MainWindow::buttonRandomResultClicked() {
                 );
     matrixRandom.generateRandom();
 
-    long double x = ui->lineEdit_x->text().toDouble();
+    // TODO: Seperate all numbers in the text
+    long double x_tmp = ui->lineEdit_x->text().toDouble();
+    std::vector<long double> x;
+    x.push_back(x_tmp);
 
     Matrix matrixB(matrixRandom.getHeight(), matrixRandom.getWidth());
     matrixB.generateZeros();
@@ -29,7 +32,7 @@ void MainWindow::buttonRandomResultClicked() {
               << " matrixRandom.getWidth(): "
               << matrixRandom.getWidth()
               << " x: "
-              << x
+              << x[0]
               << " matrixB.getHeight(): "
               << matrixB.getHeight()
               << " matrixB.getWidth(): "

@@ -1,7 +1,7 @@
 #include "equation.h"
 #include "matrix.h"
 
-Equation::Equation(Matrix A, long double x) {
+Equation::Equation(Matrix A, std::vector<long double> x) {
     this->A = A;
     this->x = x;
     this->B = Matrix(A.getHeight(), A.getWidth());
@@ -12,7 +12,7 @@ Matrix Equation::getA() {
     return A;
 }
 
-long double Equation::getX() {
+std::vector<long double> Equation::getX() {
     return x;
 }
 
