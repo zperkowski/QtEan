@@ -19,6 +19,7 @@ public:
     void generateZeros();
     void generateRandom();
     void generateRandom(long double minExp, long double maxExp);
+    void generateHilbert();
 };
 
 #endif // MATRIX_H

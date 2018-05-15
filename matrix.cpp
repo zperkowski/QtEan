@@ -34,21 +34,28 @@ void Matrix::generate(int choice) {
         std::vector<long double> row;
         for (unsigned long j = 0; j < getWidth(); j++) {
             switch (choice) {
-            case 0:
-                row.push_back(0.0);
-                break;
-            case 1:
-            case 2:
-                std::default_random_engine generator(std::random_device{}());
-                std::uniform_int_distribution<long double> distribution(1,1000);
-                long double cell = distribution(generator);
-                if (choice == 2) {
-                    std::default_random_engine generatorExp(std::random_device{}());
-                    std::uniform_int_distribution<long double> distributionExp(this->minExp, this->maxExp);
-                    cell = pow(cell, distributionExp(generatorExp));
+                case 0: {
+                    row.push_back(0.0);
+                    break;
                 }
-                row.push_back(cell);
-                break;
+                case 1:
+                case 2: {
+                    std::default_random_engine generator(std::random_device{}());
+                    std::uniform_int_distribution<long double> distribution(1,1000);
+                    long double cell = distribution(generator);
+                    if (choice == 2) {
+                        std::default_random_engine generatorExp(std::random_device{}());
+                        std::uniform_int_distribution<long double> distributionExp(this->minExp, this->maxExp);
+                        cell = pow(cell, distributionExp(generatorExp));
+                    }
+                    row.push_back(cell);
+                    break;
+                }
+                case 3: {
+                    unsigned long fraction = (i+1) + (j+1) - 1;
+                    row.push_back((long double) 1 / fraction);
+                    break;
+                }
             }
         }
         mVector.push_back(row);
@@ -67,4 +74,8 @@ void Matrix::generateRandom(long double minExp, long double maxExp) {
     this->minExp = minExp;
     this->maxExp = maxExp;
     generate(2);
+}
+
+void Matrix::generateHilbert() {
+    generate(3);
 }

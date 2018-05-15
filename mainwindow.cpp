@@ -77,7 +77,25 @@ void MainWindow::buttonRandomBigResultClicked() {
 }
 
 void MainWindow::buttonRandomHilbertResultClicked() {
+    Matrix matrixHilbert(
+                ui->lineEdit_matrix_x_hilbert->text().toInt(),
+                ui->lineEdit_matrix_y_hilbert->text().toInt());
+    matrixHilbert.generateHilbert();
 
+    // TODO: Seperate all numbers in the text
+    long double x_tmp = ui->lineEdit_x_hilbert->text().toInt();
+    std::vector<long double> x;
+    x.push_back(x_tmp);
+
+    Equation eq(matrixHilbert, x);
+
+    Table *tableA = new Table(this, eq.getA());
+    tableA->setWindowTitle("Matrix A");
+    tableA->show();
+
+    Table *tableB = new Table(this, eq.getB());
+    tableB->setWindowTitle("Matrix B");
+    tableB->show();
 }
 
 
