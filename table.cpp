@@ -13,7 +13,7 @@ Table::Table(QWidget *parent, Matrix matrix) :
 
     for(unsigned long int y = 0; y < matrix.getHeight(); y++)
         for(unsigned long int x = 0; x < matrix.getWidth(); x++)
-            ui->tableWidget->setItem(y, x, new QTableWidgetItem(QString::number((double) matrix.getCell(x, y))));
+            ui->tableWidget->setItem(y, x, new QTableWidgetItem(QString::number((double) matrix.getCell(y, x))));
 }
 
 Table::~Table() {

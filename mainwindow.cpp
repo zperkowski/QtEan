@@ -50,6 +50,8 @@ void MainWindow::buttonRandomResultClicked() {
     Table *tableB = new Table(this, eq.getB());
     tableB->setWindowTitle("Matrix B");
     tableB->show();
+
+    std::cout << "argMax: " << eq.argMax(0, 0, eq.getA()) << std::endl;
 }
 
 void MainWindow::buttonRandomBigResultClicked() {
