@@ -20,6 +20,10 @@ long double Matrix::getCell(long x, long y) {
     return mVector[y][x];
 }
 
+void Matrix::setCell(long x, long y, long double value) {
+    mVector[y][x] = value;
+}
+
 unsigned long Matrix::getWidth() {
     return this->width;
 }
@@ -78,4 +82,8 @@ void Matrix::generateRandom(long double minExp, long double maxExp) {
 
 void Matrix::generateHilbert() {
     generate(3);
+}
+
+void Matrix::swap(long a, long b) {
+    this->mVector[a].swap(mVector[b]);
 }

@@ -14,8 +14,8 @@ MainWindow::MainWindow(QWidget *parent) :
 void MainWindow::buttonRandomResultClicked() {
     //Matrix
     Matrix matrixRandom(
-                ui->lineEdit_matrix_x->text().toInt(),
-                ui->lineEdit_matrix_y->text().toInt()
+                ui->lineEdit_matrix_y->text().toInt(),
+                ui->lineEdit_matrix_x->text().toInt()
                 );
     matrixRandom.generateRandom();
 
@@ -42,22 +42,23 @@ void MainWindow::buttonRandomResultClicked() {
     std::vector<Equation> equationsVector;
 
     Equation eq(matrixRandom, x);
-
+    std::cout << "1" << std::endl;
     Table *tableA = new Table(this, eq.getA());
     tableA->setWindowTitle("Matrix A");
     tableA->show();
-
+    std::cout << "2" << std::endl;
     Table *tableB = new Table(this, eq.getB());
     tableB->setWindowTitle("Matrix B");
     tableB->show();
-
-    std::cout << "argMax: " << eq.argMax(0, 0, eq.getA()) << std::endl;
+    std::cout << "3" << std::endl;
+//    std::cout << "det: " << eq.det(eq.getA()) << std::endl;
+    std::cout << "4" << std::endl;
 }
 
 void MainWindow::buttonRandomBigResultClicked() {
     Matrix matrixBig(
-                ui->lineEdit_matrix_x_big->text().toInt(),
-                ui->lineEdit_matrix_y_big->text().toInt());
+                ui->lineEdit_matrix_y_big->text().toInt(),
+                ui->lineEdit_matrix_x_big->text().toInt());
     matrixBig.generateRandom(
                 ui->lineEdit_min_exp_big->text().toDouble(),
                 ui->lineEdit_max_exp_big->text().toDouble());
@@ -80,8 +81,8 @@ void MainWindow::buttonRandomBigResultClicked() {
 
 void MainWindow::buttonRandomHilbertResultClicked() {
     Matrix matrixHilbert(
-                ui->lineEdit_matrix_x_hilbert->text().toInt(),
-                ui->lineEdit_matrix_y_hilbert->text().toInt());
+                ui->lineEdit_matrix_y_hilbert->text().toInt(),
+                ui->lineEdit_matrix_x_hilbert->text().toInt());
     matrixHilbert.generateHilbert();
 
     // TODO: Seperate all numbers in the text

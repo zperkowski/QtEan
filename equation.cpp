@@ -31,3 +31,25 @@ unsigned long Equation::argMax(unsigned long startRow, unsigned long column, Mat
         }
     return position;
 }
+
+long double Equation::det(Matrix matrix) {
+    // TODO: Fix and calculate the determinant
+    unsigned long x = 0, y = 0, maxX;
+    long double factor;
+    while((x < matrix.getWidth()) && (y < matrix.getHeight())) {
+        maxX = argMax(y, x, matrix);
+        if(matrix.getCell(maxX, y) == 0.0f)
+            y++;
+        else {
+            matrix.swap(y, maxX);
+            for(unsigned long i = y+1; i < matrix.getHeight(); i++) {
+                factor = matrix.getCell(i, y) / matrix.getCell(x, y);
+                matrix.setCell(i, y, 0.0f);
+                for(unsigned long j = y+1; j < matrix.getWidth(); j++)
+                    matrix.setCell(i, j, matrix.getCell(i, j) - matrix.getCell(x, j) * factor);
+            }
+            x++;
+            y++;
+        }
+    }
+}

@@ -10,12 +10,13 @@ private:
     Matrix A;
     std::vector<long double> x;
     Matrix B;
+    unsigned long argMax(unsigned long startRow, unsigned long column, Matrix matrix);
 public:
     Equation(Matrix A, std::vector<long double> x);
     Matrix getA();
     std::vector<long double> getX();
     Matrix getB();
-    unsigned long argMax(unsigned long startRow, unsigned long column, Matrix matrix);
+    long double det(Matrix matrix);
 };
 
 #endif // EQUATION_H

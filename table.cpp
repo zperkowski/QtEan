@@ -8,12 +8,12 @@ Table::Table(QWidget *parent, Matrix matrix) :
 
     this->matrix = matrix;
     std::cout << "Table: " << matrix.getHeight() << "x" << matrix.getWidth() << std::endl;
-    ui->tableWidget->setRowCount(matrix.getHeight());
-    ui->tableWidget->setColumnCount(matrix.getWidth());
+    ui->tableWidget->setRowCount(matrix.getWidth());
+    ui->tableWidget->setColumnCount(matrix.getHeight());
 
     for(unsigned long int y = 0; y < matrix.getHeight(); y++)
         for(unsigned long int x = 0; x < matrix.getWidth(); x++)
-            ui->tableWidget->setItem(y, x, new QTableWidgetItem(QString::number((double) matrix.getCell(y, x))));
+            ui->tableWidget->setItem(x, y, new QTableWidgetItem(QString::number((double) matrix.getCell(x, y))));
 }
 
 Table::~Table() {
