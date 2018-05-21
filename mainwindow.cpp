@@ -42,17 +42,13 @@ void MainWindow::buttonRandomResultClicked() {
     std::vector<Equation> equationsVector;
 
     Equation eq(matrixRandom, x);
-    std::cout << "1" << std::endl;
     Table *tableA = new Table(this, eq.getA());
     tableA->setWindowTitle("Matrix A");
     tableA->show();
-    std::cout << "2" << std::endl;
     Table *tableB = new Table(this, eq.getB());
     tableB->setWindowTitle("Matrix B");
     tableB->show();
-    std::cout << "3" << std::endl;
-//    std::cout << "det: " << eq.det(eq.getA()) << std::endl;
-    std::cout << "4" << std::endl;
+    std::cout << "det: " << eq.det(eq.getA()) << std::endl;
 }
 
 void MainWindow::buttonRandomBigResultClicked() {
