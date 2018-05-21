@@ -4,6 +4,8 @@
 #include "table.h"
 #include "equation.h"
 #include "matrix.h"
+#include <sstream>
+#include <string>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -20,9 +22,9 @@ void MainWindow::buttonRandomResultClicked() {
     matrixRandom.generateRandom();
 
     // TODO: Seperate all numbers in the text
-    long double x_tmp = ui->lineEdit_x->text().toDouble();
+    std::string x_tmp = ui->lineEdit_x->text().toStdString();
     std::vector<long double> x;
-    x.push_back(x_tmp);
+    x = parseX(x_tmp);
 
     Matrix matrixB(matrixRandom.getHeight(), matrixRandom.getWidth());
     matrixB.generateZeros();
@@ -31,8 +33,8 @@ void MainWindow::buttonRandomResultClicked() {
               << matrixRandom.getHeight()
               << " matrixRandom.getWidth(): "
               << matrixRandom.getWidth()
-              << " x: "
-              << x[0]
+              << " x.size(): "
+              << x.size()
               << " matrixB.getHeight(): "
               << matrixB.getHeight()
               << " matrixB.getWidth(): "
@@ -97,6 +99,17 @@ void MainWindow::buttonRandomHilbertResultClicked() {
     tableB->show();
 }
 
+std::vector<long double> MainWindow::parseX(std::string input) {
+    long double tmp;
+    std::vector<long double> vector;
+    std::string::size_type position = 0, nextPosition = 0;
+    while(position < input.size()) {
+        tmp = std::stod(input.substr(position), &nextPosition);
+        vector.push_back(tmp);
+        position += nextPosition;
+    }
+    return vector;
+}
 
 MainWindow::~MainWindow() {
     delete ui;

@@ -21,6 +21,7 @@ public slots:
 
 private:
     Ui::MainWindow *ui;
+    std::vector<long double> parseX(std::string input);
 };
 
 #endif // MAINWINDOW_H
