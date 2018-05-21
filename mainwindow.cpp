@@ -21,7 +21,6 @@ void MainWindow::buttonRandomResultClicked() {
                 );
     matrixRandom.generateRandom();
 
-    // TODO: Seperate all numbers in the text
     std::string x_tmp = ui->lineEdit_x->text().toStdString();
     std::vector<long double> x;
     x = parseX(x_tmp);
@@ -44,12 +43,7 @@ void MainWindow::buttonRandomResultClicked() {
     std::vector<Equation> equationsVector;
 
     Equation eq(matrixRandom, x);
-    Table *tableA = new Table(this, eq.getA());
-    tableA->setWindowTitle("Matrix A");
-    tableA->show();
-    Table *tableB = new Table(this, eq.getB());
-    tableB->setWindowTitle("Matrix B");
-    tableB->show();
+    showTables(eq);
     std::cout << "det: " << eq.det(eq.getA()) << std::endl;
 }
 
@@ -61,20 +55,12 @@ void MainWindow::buttonRandomBigResultClicked() {
                 ui->lineEdit_min_exp_big->text().toDouble(),
                 ui->lineEdit_max_exp_big->text().toDouble());
 
-    // TODO: Seperate all numbers in the text
-    long double x_tmp = ui->lineEdit_x_big->text().toDouble();
+    std::string x_tmp = ui->lineEdit_x_big->text().toStdString();
     std::vector<long double> x;
-    x.push_back(x_tmp);
+    x = parseX(x_tmp);
 
     Equation eq(matrixBig, x);
-
-    Table *tableA = new Table(this, eq.getA());
-    tableA->setWindowTitle("Matrix A");
-    tableA->show();
-
-    Table *tableB = new Table(this, eq.getB());
-    tableB->setWindowTitle("Matrix B");
-    tableB->show();
+    showTables(eq);
 }
 
 void MainWindow::buttonRandomHilbertResultClicked() {
@@ -83,20 +69,12 @@ void MainWindow::buttonRandomHilbertResultClicked() {
                 ui->lineEdit_matrix_x_hilbert->text().toInt());
     matrixHilbert.generateHilbert();
 
-    // TODO: Seperate all numbers in the text
-    long double x_tmp = ui->lineEdit_x_hilbert->text().toInt();
+    std::string x_tmp = ui->lineEdit_x_hilbert->text().toStdString();
     std::vector<long double> x;
-    x.push_back(x_tmp);
+    x = parseX(x_tmp);
 
     Equation eq(matrixHilbert, x);
-
-    Table *tableA = new Table(this, eq.getA());
-    tableA->setWindowTitle("Matrix A");
-    tableA->show();
-
-    Table *tableB = new Table(this, eq.getB());
-    tableB->setWindowTitle("Matrix B");
-    tableB->show();
+    showTables(eq);
 }
 
 std::vector<long double> MainWindow::parseX(std::string input) {
@@ -109,6 +87,18 @@ std::vector<long double> MainWindow::parseX(std::string input) {
         position += nextPosition;
     }
     return vector;
+}
+
+void MainWindow::showTables(Equation eq) {
+    Table *tableA = new Table(this, eq.getA());
+    tableA->setWindowTitle("Matrix A");
+    tableA->show();
+    Table *tableX = new Table(this, eq.getX());
+    tableX->setWindowTitle("X");
+    tableX->show();
+    Table *tableB = new Table(this, eq.getB());
+    tableB->setWindowTitle("Matrix B");
+    tableB->show();
 }
 
 MainWindow::~MainWindow() {

@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "equation.h"
 
 namespace Ui {
     class MainWindow;
@@ -22,6 +23,7 @@ public slots:
 private:
     Ui::MainWindow *ui;
     std::vector<long double> parseX(std::string input);
+    void showTables(Equation eq);
 };
 
 #endif // MAINWINDOW_H
