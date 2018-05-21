@@ -14,10 +14,12 @@ class Table : public QMainWindow
 
 public:
     explicit Table(QWidget *parent = 0, Matrix matrix = Matrix(0,0));
+    explicit Table(QWidget *parent, std::vector<long double> x);
     ~Table();
 
 private:
     Matrix matrix;
+    std::vector<long double> x;
     Ui::Table *ui;
 };
 

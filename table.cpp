@@ -16,6 +16,19 @@ Table::Table(QWidget *parent, Matrix matrix) :
             ui->tableWidget->setItem(x, y, new QTableWidgetItem(QString::number((double) matrix.getCell(x, y))));
 }
 
+Table::Table(QWidget *parent, std::vector<long double> x) :
+    QMainWindow(parent), ui(new Ui::Table) {
+        ui->setupUi(this);
+
+    this->x = x;
+    std::cout << "x.size(): " << x.size() << std::endl;
+    ui->tableWidget->setRowCount(x.size());
+    ui->tableWidget->setColumnCount(1);
+
+    for(unsigned long int i = 0; i < x.size(); i++)
+        ui->tableWidget->setItem(0, i, new QTableWidgetItem(QString::number((double) x[i])));
+}
+
 Table::~Table() {
     delete ui;
 }
