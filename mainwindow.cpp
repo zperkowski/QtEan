@@ -25,24 +25,10 @@ void MainWindow::buttonRandomResultClicked() {
     std::vector<long double> x;
     x = parseX(x_tmp);
 
-    Matrix matrixB(matrixRandom.getHeight(), matrixRandom.getWidth());
-    matrixB.generateZeros();
-
-    std::cout << "matrixRandom.getHeight(): "
-              << matrixRandom.getHeight()
-              << " matrixRandom.getWidth(): "
-              << matrixRandom.getWidth()
-              << " x.size(): "
-              << x.size()
-              << " matrixB.getHeight(): "
-              << matrixB.getHeight()
-              << " matrixB.getWidth(): "
-              << matrixB.getWidth()
-              << std::endl;
-
     std::vector<Equation> equationsVector;
 
     Equation eq(matrixRandom, x);
+    eq.mulAX();
     showTables(eq);
     std::cout << "det: " << eq.det(eq.getA()) << std::endl;
 }
@@ -60,6 +46,7 @@ void MainWindow::buttonRandomBigResultClicked() {
     x = parseX(x_tmp);
 
     Equation eq(matrixBig, x);
+    eq.mulAX();
     showTables(eq);
 }
 
@@ -74,6 +61,7 @@ void MainWindow::buttonRandomHilbertResultClicked() {
     x = parseX(x_tmp);
 
     Equation eq(matrixHilbert, x);
+    eq.mulAX();
     showTables(eq);
 }
 

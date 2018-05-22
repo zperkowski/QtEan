@@ -5,7 +5,7 @@
 Equation::Equation(Matrix A, std::vector<long double> x) {
     this->A = A;
     this->x = x;
-    this->B = Matrix(A.getHeight(), A.getWidth());
+    this->B = Matrix(1, A.getHeight());
     this->B.generateZeros();
 }
 
@@ -55,4 +55,14 @@ long double Equation::det(Matrix matrix) {
     for(unsigned long i = 0; i < matrix.getHeight() || i < matrix.getWidth(); i++)
         det *= matrix.getCell(i, i);
     return det;
+}
+
+void Equation::mulAX() {
+    long double sum = 0.0f;
+    for (unsigned long yPos = 0; yPos < A.getHeight(); yPos++) {
+        for (unsigned long xPos = 0; xPos < A.getWidth(); xPos++)
+            sum += A.getCell(yPos, xPos) * x[xPos];
+        B.setCell(yPos, 0, sum);
+        sum = 0.0f;
+    }
 }

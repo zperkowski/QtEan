@@ -17,6 +17,7 @@ public:
     std::vector<long double> getX();
     Matrix getB();
     long double det(Matrix matrix);
+    void mulAX();
 };
 
 #endif // EQUATION_H
