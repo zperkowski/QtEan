@@ -33,7 +33,6 @@ unsigned long Equation::argMax(unsigned long startRow, unsigned long column, Mat
 }
 
 long double Equation::det(Matrix matrix) {
-    //TODO: Find why calculations give nan values
     unsigned long x = 0, y = 0, maxX;
     long double factor;
     while((x < matrix.getWidth()) && (y < matrix.getHeight())) {
@@ -43,10 +42,10 @@ long double Equation::det(Matrix matrix) {
         else {
             matrix.swap(y, maxX);
             for(unsigned long i = y+1; i < matrix.getHeight(); i++) {
-                factor = matrix.getCell(i, y) / matrix.getCell(x, y);
-                matrix.setCell(i, y, 0.0f);
-                for(unsigned long j = y+1; j < matrix.getWidth(); j++)
-                    matrix.setCell(j, i, matrix.getCell(i, j) - (matrix.getCell(x, j) * factor));
+                factor = matrix.getCell(x, i) / matrix.getCell(x, y);
+                matrix.setCell(x, i, 0.0f);
+                for(unsigned long j = x+1; j < matrix.getWidth(); j++)
+                    matrix.setCell(j, i, matrix.getCell(j, i) - (matrix.getCell(j, y) * factor));
             }
             x++;
             y++;
