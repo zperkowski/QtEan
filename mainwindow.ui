@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QTabWidget" name="tabHilbert">
+   <widget class="QTabWidget" name="tabs">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -30,7 +30,7 @@
      </sizepolicy>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tabRandom">
      <attribute name="title">
@@ -45,7 +45,7 @@
         <height>241</height>
        </rect>
       </property>
-      <layout class="QGridLayout" name="gridLayout">
+      <layout class="QGridLayout" name="gridRandom">
        <property name="sizeConstraint">
         <enum>QLayout::SetMaximumSize</enum>
        </property>
@@ -73,7 +73,11 @@
         <widget class="QLineEdit" name="lineEdit_matrix_x"/>
        </item>
        <item row="7" column="0">
-        <widget class="QLineEdit" name="lineEdit_matrix_y"/>
+        <widget class="QLineEdit" name="lineEdit_matrix_y">
+         <property name="cursorPosition">
+          <number>0</number>
+         </property>
+        </widget>
        </item>
        <item row="5" column="2">
         <widget class="QLineEdit" name="lineEdit_x">
@@ -161,7 +165,7 @@
         <height>241</height>
        </rect>
       </property>
-      <layout class="QGridLayout" name="gridLayout_2">
+      <layout class="QGridLayout" name="gridRandomBig">
        <property name="sizeConstraint">
         <enum>QLayout::SetMaximumSize</enum>
        </property>
@@ -284,7 +288,7 @@
       </layout>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab">
+    <widget class="QWidget" name="tabHilbert">
      <attribute name="title">
       <string>Hilbert</string>
      </attribute>
@@ -297,7 +301,7 @@
         <height>241</height>
        </rect>
       </property>
-      <layout class="QGridLayout" name="gridLayout_3">
+      <layout class="QGridLayout" name="gridHilbert">
        <property name="sizeConstraint">
         <enum>QLayout::SetMaximumSize</enum>
        </property>
@@ -417,6 +421,23 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>tabs</tabstop>
+  <tabstop>lineEdit_matrix_x</tabstop>
+  <tabstop>lineEdit_matrix_y</tabstop>
+  <tabstop>lineEdit_x</tabstop>
+  <tabstop>random_button_result</tabstop>
+  <tabstop>lineEdit_min_exp_big</tabstop>
+  <tabstop>lineEdit_max_exp_big</tabstop>
+  <tabstop>lineEdit_matrix_x_big</tabstop>
+  <tabstop>lineEdit_matrix_y_big</tabstop>
+  <tabstop>lineEdit_x_big</tabstop>
+  <tabstop>random_button_result_big</tabstop>
+  <tabstop>lineEdit_matrix_x_hilbert</tabstop>
+  <tabstop>lineEdit_matrix_y_hilbert</tabstop>
+  <tabstop>lineEdit_x_hilbert</tabstop>
+  <tabstop>random_button_result_hilbert</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>
