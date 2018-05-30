@@ -29,8 +29,10 @@ void MainWindow::buttonRandomResultClicked() {
 
     Equation eq(matrixRandom, x);
     eq.mulAX();
+    eq.mulAB();
     showTables(eq);
     std::cout << "det: " << eq.det(eq.getA()) << std::endl;
+
 }
 
 void MainWindow::buttonRandomBigResultClicked() {
@@ -84,9 +86,13 @@ void MainWindow::showTables(Equation eq) {
     Table *tableX = new Table(this, eq.getX());
     tableX->setWindowTitle("X");
     tableX->show();
+    Table *tableX2 = new Table(this, eq.getX2());
+    tableX2->setWindowTitle("X2");
+    tableX2->show();
     Table *tableB = new Table(this, eq.getB());
     tableB->setWindowTitle("Matrix B");
     tableB->show();
+
 }
 
 MainWindow::~MainWindow() {

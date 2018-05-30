@@ -87,3 +87,12 @@ void Matrix::generateHilbert() {
 void Matrix::swap(long a, long b) {
     this->mVector[a].swap(mVector[b]);
 }
+
+Matrix Matrix::transpose() {
+    Matrix t(this->getHeight(), this->getWidth());
+    t.generateZeros();
+    for (unsigned long y = 0; y < this->getHeight(); y++)
+        for (unsigned long x = 0; x < this->getWidth(); x++)
+            t.setCell(y, x, this->getCell(x, y));
+    return t;
+}

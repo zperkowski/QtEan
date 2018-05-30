@@ -22,6 +22,7 @@ public:
     void generateRandom(long double minExp, long double maxExp);
     void generateHilbert();
     void swap(long a, long b);
+    Matrix transpose();
 };
 
 #endif // MATRIX_H
