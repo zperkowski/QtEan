@@ -31,7 +31,6 @@ void MainWindow::buttonRandomResultClicked() {
     eq.mulAX();
     eq.mulAB();
     showTables(eq);
-    std::cout << "det: " << eq.getA().det() << std::endl;
 }
 
 void MainWindow::buttonRandomBigResultClicked() {
@@ -80,7 +79,9 @@ std::vector<long double> MainWindow::parseX(std::string input) {
 
 void MainWindow::showTables(Equation eq) {
     Table *tableA = new Table(this, eq.getA());
-    tableA->setWindowTitle("Matrix A");
+    tableA->setWindowTitle("Matrix A ");
+    std::cout << "Det of A: ";
+    std::cout << eq.getA().det() << std::endl;
     tableA->show();
     Table *tableX = new Table(this, eq.getX());
     tableX->setWindowTitle("X");

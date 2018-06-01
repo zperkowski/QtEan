@@ -11,6 +11,8 @@ private:
     long double minExp;
     long double maxExp;
     unsigned long argMax(unsigned long startRow, unsigned long column);
+    long double det(Matrix matrix);
+    Matrix getSubMatrix(unsigned long x, unsigned long y);
 public:
     Matrix();
     Matrix(unsigned long w, unsigned long h);
@@ -25,7 +27,6 @@ public:
     void swap(long a, long b);
     Matrix transpose();
     long double det();
-    long double det(Matrix matrix);
     Matrix adjugate();
 };
 

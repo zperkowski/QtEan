@@ -36,8 +36,7 @@ void Equation::mulAX() {
 }
 
 void Equation::mulAB() {
-    // TODO: Generate and use here complements matrix
-    Matrix tMatrixA = A.transpose();
+    Matrix tMatrixA = A.adjugate().transpose();
     long double sum = 0.0f;
     for (unsigned long yPos = 0; yPos < tMatrixA.getHeight(); yPos++) {
         for (unsigned long xPos = 0; xPos < tMatrixA.getWidth(); xPos++)

@@ -138,5 +138,40 @@ long double Matrix::det(Matrix matrix) {
 }
 
 Matrix Matrix::adjugate() {
-    // TODO
+    Matrix adjugateMatrix(this->width, this->hight);
+    adjugateMatrix.generateZeros();
+    for(unsigned long y = 0; y < this->hight; y++)
+        for(unsigned long x = 0; x < this->width; x++) {
+            long detSub = this->getSubMatrix(x, y).det();
+            if (y + x % 2 != 0)
+                detSub *= -1;
+            adjugateMatrix.setCell(x, y, detSub);
+        }
+    return adjugateMatrix;
+}
+
+// x and y are used to remove given row and column from this matrix
+Matrix Matrix::getSubMatrix(unsigned long x_ignore, unsigned long y_ignore) {
+    Matrix subMatrix(this->width-1, this->hight-1);
+    subMatrix.generateZeros();
+    unsigned long row_passed = 0;
+    unsigned long column_passed = 0;
+
+    for(unsigned long y = 0; y < this->hight; y++) {
+        if (y == y_ignore) {
+            row_passed = 1;
+            continue;
+        }
+        for(unsigned long x = 0; x < this->width; x++) {
+            if (x == x_ignore) {
+                column_passed = 1;
+                continue;
+            }
+            subMatrix.setCell(x - column_passed,
+                              y - row_passed,
+                              this->getCell(x, y));
+        }
+        column_passed = 0;
+    }
+    return subMatrix;
 }
