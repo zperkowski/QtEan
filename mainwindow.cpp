@@ -31,8 +31,7 @@ void MainWindow::buttonRandomResultClicked() {
     eq.mulAX();
     eq.mulAB();
     showTables(eq);
-    std::cout << "det: " << eq.det(eq.getA()) << std::endl;
-
+    std::cout << "det: " << eq.getA().det() << std::endl;
 }
 
 void MainWindow::buttonRandomBigResultClicked() {

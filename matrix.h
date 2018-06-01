@@ -10,6 +10,7 @@ private:
     void generate(int choice);
     long double minExp;
     long double maxExp;
+    unsigned long argMax(unsigned long startRow, unsigned long column);
 public:
     Matrix();
     Matrix(unsigned long w, unsigned long h);
@@ -23,6 +24,9 @@ public:
     void generateHilbert();
     void swap(long a, long b);
     Matrix transpose();
+    long double det();
+    long double det(Matrix matrix);
+    Matrix adjugate();
 };
 
 #endif // MATRIX_H
